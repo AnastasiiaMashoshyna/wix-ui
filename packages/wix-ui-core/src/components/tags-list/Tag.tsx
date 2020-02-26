@@ -22,6 +22,7 @@ export interface TagProps {
   link?: string;
   rel?: string;
   compId?: string;
+  singleSelection?: boolean;
 }
 
 export class Tag extends React.Component<TagProps> {
@@ -40,6 +41,7 @@ export class Tag extends React.Component<TagProps> {
     rel: PropTypes.string,
     compId: PropTypes.string,
     tagIndex: PropTypes.number,
+    singleSelection: PropTypes.bool,
   };
 
   inputRef: React.RefObject<HTMLInputElement> = React.createRef();
@@ -100,6 +102,7 @@ export class Tag extends React.Component<TagProps> {
       rel,
       compId,
       tagIndex,
+      singleSelection,
       ...rest
     } = this.props;
 
@@ -107,6 +110,8 @@ export class Tag extends React.Component<TagProps> {
       className: classNames(style.tag, className),
       ...rest,
     };
+
+    const inputType = singleSelection ? 'radio' : 'checkbox';
 
     const LabeledInput = (props: any) => {
       // in case with link, we should focus anchor wrapper
@@ -129,7 +134,7 @@ export class Tag extends React.Component<TagProps> {
             ref={this.inputRef}
             data-hook={DataHooks.TagInput}
             className={style.tagInput}
-            type="checkbox"
+            type={inputType}
             checked={checked}
             onChange={onChange}
             value={value}
@@ -145,7 +150,7 @@ export class Tag extends React.Component<TagProps> {
     return link ? (
       <a
         ref={this.anchorRef}
-        role="checkbox"
+        role={inputType}
         aria-checked={checked}
         aria-disabled={disabled}
         href={link}
