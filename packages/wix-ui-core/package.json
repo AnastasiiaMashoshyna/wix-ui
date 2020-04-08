@@ -53,7 +53,7 @@
     "sanity": "autotools-sanity",
     "a11y": "autotools-a11y",
     "lint": "yoshi lint",
-    "yoshi-start": "yoshi start --no-test",
+    "yoshi-start": "yoshi start --no-server",
     "------CI Parallel tasks (as in .ci_config)": "",
     "wix-ui-core:unit": "npm run test:unit",
     "wix-ui-core:e2e": "npm run test:e2e",
@@ -105,8 +105,7 @@
     "wix-ui-test-utils": "^1.0.151"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@storybook/react": "5.0.0",
+    "@storybook/react": "^5.0.0",
     "@stylable/cli": "^3.4.0",
     "@stylable/core": "^3.4.0",
     "@types/classnames": "^2.2.3",
