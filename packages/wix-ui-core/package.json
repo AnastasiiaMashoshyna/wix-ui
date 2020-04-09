@@ -146,6 +146,7 @@
     "wix-ui-icons-common": "^2.0.0",
     "wix-ui-mocha-runner": "^0.1.6",
     "yoshi": "^4.55.1",
+    "yoshi-stylable-dependencies": "^4.49.0",
     "yoshi-style-dependencies": "^4.37.1"
   },
   "license": "MIT",
